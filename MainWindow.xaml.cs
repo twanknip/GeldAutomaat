@@ -18,16 +18,16 @@ namespace geldautomaat
         private void Login(object sender, RoutedEventArgs e)
         {
             string enteredUsername = username.Text;
-            string enteredPassword = password.Password;
+            string enteredPin = pin.Password;
 
             Geldautomaat geldautomaat = new Geldautomaat(sql);
-            Account account = geldautomaat.AuthenticateUser(enteredUsername, enteredPassword);
+            Account account = geldautomaat.AuthenticateUser(enteredUsername, enteredPin);
 
             if (account != null)
             {
-                User user = geldautomaat.GetUser(account.holder);
-                DashboardData dashboardData = new DashboardData { Account = account, User = user };
+                DashboardData dashboardData = new DashboardData { Account = account };
                 Dashboard dashboard = new Dashboard(dashboardData, sql);
+               
                 dashboard.Show();
                 this.Close();
             }

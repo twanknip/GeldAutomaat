@@ -39,7 +39,7 @@
                 <PasswordBox Margin="0,10"
                              Height="30"
                              FontSize="16"
-                             x:Name="password"
+                             x:Name="pin"
                              HorizontalContentAlignment="Center"
                              Background="White"
                              BorderBrush="#0078D7"

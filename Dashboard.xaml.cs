@@ -11,19 +11,20 @@ namespace geldautomaat
     {
         private readonly DashboardData _dashboardData;
         private readonly SQL _sql;
+        private readonly Geldautomaat _geldautomaat;
 
         public Dashboard(DashboardData dashboardData, SQL sql)
         {
             InitializeComponent();
-            _dashboardData = dashboardData;
+            _geldautomaat = new Geldautomaat(new SQL());
             _sql = sql;
+            _dashboardData = dashboardData;
             DataContext = _dashboardData;
             LoadRecentTransactions();
         }
-
         private void LoadRecentTransactions()
         {
-            var transactions = _sql.GetRecentTransactions(_dashboardData.Account.id, 3);
+            var transactions = _geldautomaat.GetRecentTransactions(_dashboardData.Account.id, 3);
             _dashboardData.RecentTransactions = new ObservableCollection<Database.Models.Transaction>(transactions.ToList());
         }
 

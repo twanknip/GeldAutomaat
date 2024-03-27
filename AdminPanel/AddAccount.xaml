@@ -1,0 +1,65 @@
+﻿<Window x:Class="AdminPanel.AddAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddAccount"
+        Height="450"
+        Width="800">
+    <Grid Background="#F4F4F4">
+        <Border Background="White"
+                Padding="20"
+                CornerRadius="10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            <StackPanel>
+                <Button Content="Ga terug"
+                        Click="GaTerug"
+                        Margin="0 0 0 20"
+                        HorizontalAlignment="Left"
+                        Background="#FF4081"
+                        Foreground="White"
+                        Padding="10"
+                        FontWeight="Bold"
+                        FontSize="16" />
+                <TextBlock Text="Voeg een nieuwe rekening toe"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="#0078D7"
+                           Margin="0 0 0 20" />
+                <TextBox x:Name="txtNaam"
+                         Margin="0 0 0 10"
+                         FontSize="16"
+                         FontWeight="Bold"
+                         Padding="10"
+                         Text="Voer naam in"
+                         BorderBrush="#0078D7"
+                         BorderThickness="1" />
+                <TextBox x:Name="txtIban"
+                         Margin="0 0 0 10"
+                         FontSize="16"
+                         FontWeight="Bold"
+                         Text="Voer iban in"
+                         Padding="10"
+                         BorderBrush="#0078D7"
+                         BorderThickness="1" />
+                <ComboBox x:Name="cmbType"
+                          Margin="0 0 0 10"
+                          FontSize="16"
+                          FontWeight="Bold"
+                          Padding="10"
+                          BorderBrush="#0078D7"
+                          BorderThickness="1">
+                    <ComboBoxItem Content="personal" />
+                    <ComboBoxItem Content="business" />
+                </ComboBox>
+                <Button Content="Toevoegen"
+                        Click="AddRekening"
+                        HorizontalAlignment="Left"
+                        Background="#0078D7"
+                        Foreground="White"
+                        Padding="10"
+                        FontWeight="Bold"
+                        FontSize="16" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

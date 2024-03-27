@@ -1,7 +1,7 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Windows;
 using Database.Controllers;
-using Database.Models;
+using Database.ViewModels;
 
 namespace AdminPanel
 {
@@ -13,7 +13,12 @@ namespace AdminPanel
         {
             InitializeComponent();
             _geldautomaat = new Geldautomaat(new SQL());
-            DisplayAccounts();
+            FillListBoxWithAccounts();
+        }
+        private void FillListBoxWithAccounts()
+        {
+            List<AccountViewModel> accounts = _geldautomaat.GetAccounts();
+            lstAccounts.ItemsSource = accounts;
         }
 
         private void GaTerug(object sender, RoutedEventArgs e)
@@ -23,21 +28,16 @@ namespace AdminPanel
             Close();
         }
 
-        private void DisplayAccounts()
-        {
-            var accounts = _geldautomaat.GetAllAccountsWithUsername();
-            lstAccounts.ItemsSource = accounts;
-        }
-
         private void MaakNieuweRekening(object sender, RoutedEventArgs e)
         {
             AddAccount addAccountWindow = new AddAccount();
             addAccountWindow.ShowDialog();
             Close();
         }
+
         private void EditAccount(object sender, RoutedEventArgs e)
         {
-            // Voeg hier de logica toe om een nieuwe rekening aan te maken
+            // Voeg hier de logica toe om een account te bewerken
         }
     }
 }

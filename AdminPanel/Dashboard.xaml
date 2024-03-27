@@ -27,8 +27,8 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <TextBlock Text="{Binding username, StringFormat='Naam: {0}'}" />
-                            <TextBlock Text="{Binding accountdetails, StringFormat='IBAN: {0}'}" />
+                            <TextBlock Text="{Binding IBAN, StringFormat='IBAN: {0}'}" />
+                            <TextBlock Text="{Binding Username, StringFormat='Username: {0}'}" />
                             <Button Content="Bewerk"
                                     Background="#0078D7"
                                     Foreground="White"

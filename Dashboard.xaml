@@ -8,6 +8,7 @@
     <Grid>
         <Border Background="White"
                 Padding="20"
+                Width="400"
                 CornerRadius="10"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center">
@@ -22,7 +23,7 @@
                         Padding="10"
                         FontWeight="Bold"
                         FontSize="16" />
-                <TextBlock Text="{Binding User.username, StringFormat='Welkom: {0}'}"
+                <TextBlock Text="{Binding Account.user.username, StringFormat='Welkom: {0}'}"
                            FontSize="24"
                            FontWeight="Bold"
                            Foreground="#0078D7"
@@ -77,12 +78,6 @@
                             Padding="10" />
                     <Button Content="Geld storten"
                             Click="GeldStorten"
-                            Margin="5"
-                            Background="#0078D7"
-                            Foreground="White"
-                            Padding="10" />
-                    <Button Content="Geld overmaken"
-                            Click="GeldOvermaken"
                             Margin="5"
                             Background="#0078D7"
                             Foreground="White"
