@@ -31,7 +31,9 @@ namespace AdminPanel
 
         private void MaakNieuweRekening(object sender, RoutedEventArgs e)
         {
-            // Voeg hier de logica toe om een nieuwe rekening aan te maken
+            AddAccount addAccountWindow = new AddAccount();
+            addAccountWindow.ShowDialog();
+            Close();
         }
         private void EditAccount(object sender, RoutedEventArgs e)
         {

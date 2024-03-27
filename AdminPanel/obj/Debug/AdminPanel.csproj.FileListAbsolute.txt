@@ -32,3 +32,5 @@ C:\webroot\geldautomaat\AdminPanel\obj\Debug\AdminPanel.exe
 C:\webroot\geldautomaat\AdminPanel\obj\Debug\AdminPanel.pdb
 C:\webroot\geldautomaat\AdminPanel\obj\Debug\Dashboard.g.cs
 C:\webroot\geldautomaat\AdminPanel\obj\Debug\Dashboard.baml
+C:\webroot\geldautomaat\AdminPanel\obj\Debug\AddAccount.baml
+C:\webroot\geldautomaat\AdminPanel\obj\Debug\AddAccount.g.cs
