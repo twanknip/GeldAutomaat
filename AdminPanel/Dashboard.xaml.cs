@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 using Database.Controllers;
 using Database.ViewModels;
 
@@ -15,6 +16,7 @@ namespace AdminPanel
             _geldautomaat = new Geldautomaat(new SQL());
             FillListBoxWithAccounts();
         }
+
         private void FillListBoxWithAccounts()
         {
             List<AccountViewModel> accounts = _geldautomaat.GetAccounts();
@@ -32,12 +34,14 @@ namespace AdminPanel
         {
             AddAccount addAccountWindow = new AddAccount();
             addAccountWindow.ShowDialog();
-            Close();
+            FillListBoxWithAccounts();
         }
 
         private void EditAccount(object sender, RoutedEventArgs e)
         {
-            // Voeg hier de logica toe om een account te bewerken
+            AccountViewModel selectedAccount = (sender as Button).DataContext as AccountViewModel;
+            EditAccount editAccountWindow = new EditAccount(selectedAccount);
+            editAccountWindow.ShowDialog();
         }
     }
 }
